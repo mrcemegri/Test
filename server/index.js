@@ -47,6 +47,13 @@ const limiter = rateLimit({
 });
 app.use('/api/', limiter);
 
+// File upload middleware
+app.use(fileUpload({
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB max file size
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}));
+
 // Basic middleware
 app.use(compression());
 app.use(morgan('combined'));
