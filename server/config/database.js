@@ -30,8 +30,15 @@ const testConnection = async () => {
     console.log('✅ Database connected successfully');
   } catch (error) {
     console.error('❌ Database connection failed:', error);
-    process.exit(1);
+    if (process.env.NODE_ENV !== 'test') {
+      process.exit(1);
+    }
   }
 };
+
+// Initialize database connection on module load
+if (process.env.NODE_ENV !== 'test') {
+  testConnection();
+}
 
 module.exports = { db, testConnection };
