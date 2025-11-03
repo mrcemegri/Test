@@ -78,6 +78,10 @@ app.use('/api/deals', authenticateToken, dealRoutes);
 app.use('/api/pipelines', authenticateToken, pipelineRoutes);
 app.use('/api/activities', authenticateToken, activityRoutes);
 app.use('/api/dashboard', authenticateToken, dashboardRoutes);
+app.use('/api/files', fileRoutes);
+
+// Serve uploaded files
+app.use('/uploads', express.static('server/uploads'));
 
 // 404 handler
 app.use('*', (req, res) => {
