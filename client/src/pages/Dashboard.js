@@ -7,7 +7,13 @@ import {
   HandRaisedIcon,
   CheckCircleIcon,
   ClockIcon,
+  CurrencyDollarIcon,
+  CalendarIcon,
 } from '@heroicons/react/24/outline';
+import StatCard from '../components/UI/StatCard';
+import ContactCard from '../components/Common/ContactCard';
+import DealCard from '../components/Common/DealCard';
+import Badge from '../components/UI/Badge';
 import api from '../../services/api';
 
 const fetchDashboardMetrics = async () => {
