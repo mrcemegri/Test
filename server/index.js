@@ -16,6 +16,7 @@ const dealRoutes = require('./routes/deals');
 const pipelineRoutes = require('./routes/pipelines');
 const activityRoutes = require('./routes/activities');
 const dashboardRoutes = require('./routes/dashboard');
+const fileRoutes = require('./routes/files');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
